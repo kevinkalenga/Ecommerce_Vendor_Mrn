@@ -1,6 +1,8 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa";
 
  const Register = () => {
   return (
@@ -47,6 +49,31 @@ import { Link } from 'react-router-dom'
                          <Link to='/login' className='font-bold'> Sign In</Link>
                       </p>
 
+                    </div>
+                    <div className='w-full flex justify-center items-center mb-3'>
+                         <div className='w-[45%] bg-slate-700 h-[1px]'></div>
+                         <div className='w-[10%] flex justify-center items-center'>
+                            <span className='pb-1'>OR</span>
+                         </div>
+                         <div className='w-[45%] bg-slate-700 h-[1px]'></div>
+                    </div>
+                    <div className='flex justify-center items-center gap-3'>
+                        <div className='w-[135px] h-[35px] 
+                        flex rounded-md bg-orange-700
+                         hover:shadow-orange-700/50 justify-center cursor-pointer
+                          items-center overflow-hidden'>
+                                 <span>
+                                    <FcGoogle className='font-bold' />
+                                 </span>
+                        </div>
+                        <div className='w-[135px] h-[35px] 
+                        flex rounded-md bg-blue-700
+                         hover:shadow-blue-700/50 justify-center cursor-pointer
+                          items-center overflow-hidden'>
+                                 <span>
+                                    <FaFacebook className='font-bold' />
+                                 </span>
+                        </div>
                     </div>
                 </form>
             </div>
