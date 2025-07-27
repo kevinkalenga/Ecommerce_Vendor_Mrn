@@ -1,0 +1,22 @@
+# Global dependencies (root + subfolders)
+**/node_modules/
+**/build/
+**/dist/
+
+# Ignore all .env files (anywhere)
+**/.env*
+.env
+
+# System files
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+**/coverage/
+
+# Optional: PnP (Yarn Plug'n'Play)
+.pnp.*
