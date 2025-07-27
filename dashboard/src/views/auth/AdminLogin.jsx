@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-
+import { useDispatch } from 'react-redux'
+import { admin_login } from '../../store/Reducers/authReducer';
 
 
  const AdminLogin = () => {
   
+    const dispatch = useDispatch();
      
      const [state, setState] = useState({
         email: "",
@@ -19,7 +21,8 @@ import React, { useState } from 'react'
    
      const submit = (e) => {
        e.preventDefault();
-       console.log(state)
+       dispatch(admin_login(state))
+       
      }
   
   
