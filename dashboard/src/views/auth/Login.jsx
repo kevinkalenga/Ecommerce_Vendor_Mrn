@@ -7,7 +7,6 @@ import { FaFacebook } from "react-icons/fa";
   
      
      const [state, setState] = useState({
-        
         email: "",
         password: ""
      })
