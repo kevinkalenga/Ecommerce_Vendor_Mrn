@@ -16,13 +16,15 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 
 // appel les routes
-const authRoutes = require('./routes/authRoutes')
+const authRoutes = require('./routes/authRoutes');
+const { dbConnect } = require('./utils/db');
 
 app.use('/api', authRoutes)
 
 app.get('/', (req, res) => res.send("My backend"))
 
 const port = process.env.PORT
+dbConnect()
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })

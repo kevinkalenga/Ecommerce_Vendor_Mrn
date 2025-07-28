@@ -12,7 +12,7 @@ export const admin_login = createAsyncThunk(
             })
             console.log(data)
         } catch (error) {
-            
+            console.log(error.response.data)
         }
     }
 )
