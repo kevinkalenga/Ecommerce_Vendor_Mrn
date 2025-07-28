@@ -33,6 +33,9 @@ const authReducer = createSlice({
   },
   extraReducers: (builder) => {
     // À compléter plus tard
+    builder.addCase(admin_login.pending, (state, {payload}) => {
+      state.loader = true;
+    })
   }
 });
 
