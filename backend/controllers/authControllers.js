@@ -5,6 +5,8 @@ const bcrpty = require('bcrypt')
 class authControllers {
     admin_login = async(req, res) => {
         const {email, password} = req.body
+        console.log("Requête reçue :", req.body);
+
         try {
            const admin = await adminModel.findOne({email}).select('+password') 
         //    console.log(admin)
@@ -21,7 +23,7 @@ class authControllers {
                 })
                 responseReturn(res, 200, {token, message: "Login Success"})
             } else {
-                responseReturn(res, 404, {error: "Password Wrong"})
+                responseReturn(res, 401, {error: "Password Wrong"})
             }
         } else {
             responseReturn(res, 404, {error: "Email not found"})
