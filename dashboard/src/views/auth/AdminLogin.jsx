@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { admin_login, messageClear } from '../../store/Reducers/authReducer';
 import {PropagateLoader} from 'react-spinners'
 import toast from 'react-hot-toast'
+import {useNavigate} from 'react-router-dom'
 
  const AdminLogin = () => {
-  
+    const navigate = useNavigate()
     const dispatch = useDispatch();
-    const {loader, errorMessage} =useSelector((state) => state.auth)
+    const {loader, errorMessage, successMessage} =useSelector((state) => state.auth)
      
      const [state, setState] = useState({
         email: "",
@@ -40,7 +41,13 @@ import toast from 'react-hot-toast'
         toast.error(errorMessage)
         dispatch(messageClear())
        }
-     }, [errorMessage, dispatch])
+
+       if(successMessage) {
+         toast.success(successMessage)
+         dispatch(messageClear())
+         navigate('/')
+       }
+     }, [errorMessage, successMessage, dispatch, navigate])
   
   return (
     <div className='min-h-screen max-w-screen bg-[#cdcae9] flex justify-center items-center'>
