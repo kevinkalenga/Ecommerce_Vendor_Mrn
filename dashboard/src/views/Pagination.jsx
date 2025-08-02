@@ -1,5 +1,6 @@
 import React from 'react'
-import { RiArrowLeftDoubleFill } from "react-icons/ri";
+
+import { MdOutlineKeyboardDoubleArrowLeft, MdOutlineKeyboardDoubleArrowRight  } from "react-icons/md";
 
 const Pagination = ({ pageNumber, setPageNumber,  totalItem, perPage,  showItem}) => {
   
@@ -37,14 +38,20 @@ const Pagination = ({ pageNumber, setPageNumber,  totalItem, perPage,  showItem}
     return (
       <ul className='flex gap-3'>
           {
-            pageNumber > 1 && <li className='w-[33px] h-[33px] rounded-full 
-                 flex justify-center items-center bg-slate-300 text-[#000000]'>
-                <RiArrowLeftDoubleFill />
+            pageNumber > 1 && <li  onClick={() => setPageNumber(pageNumber - 1)} className='w-[33px] h-[33px] rounded-full 
+                 flex justify-center items-center bg-slate-300 text-[#000000] cursor-pointer'>
+                <MdOutlineKeyboardDoubleArrowLeft />
             </li>
           }
           {
             createBton()
           }
+
+           {
+                pageNumber < totalPage && <li onClick={() => setPageNumber(pageNumber + 1)} className='w-[33px] h-[33px] rounded-full flex justify-center items-center bg-slate-300 text-[#000000] cursor-pointer'>
+                    <MdOutlineKeyboardDoubleArrowRight />
+                </li>
+            }
       </ul>
   )
 }
