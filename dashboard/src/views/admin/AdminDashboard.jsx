@@ -196,8 +196,8 @@ const AdminDashboard = () => {
                     <h2 className='font-semibold text-lg text-[#d0d2d6] pb-3 '>Recent Orders</h2>
                     <Link className='font-semibold text-sm text-[#d0d2d6]'>View All</Link>
                </div>
-                <div className='relative overflow-x-auto'>
-                       <table className='w-full text-sm text-left text-[#d0d2d6]'>
+    <div className='relative overflow-x-auto'>
+      <table className='w-full text-sm text-left text-[#d0d2d6]'>
         <thead className='text-sm text-[#d0d2d6] uppercase border-b border-slate-700'>
         <tr>
             <th scope='col' className='py-3 px-4'>Order Id</th>
@@ -229,8 +229,8 @@ const AdminDashboard = () => {
 
     </table>
 
-                </div>
-         </div>
+     </div>
+    </div>
     
     </div>
   )
