@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+import { FaImage } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Pagination from '../Pagination';
 import { FaEdit, FaTrash } from 'react-icons/fa';
@@ -94,7 +94,25 @@ const Category = () => {
                                <div className='flex flex-col w-full gap-1 mb-3'>
                                   <label htmlFor="name">Category Name</label>
                                   <input className='px-4 py-2 focus:border-indigo-500
-                                      outline-none bg-[#6a5fdf] border border-slate-700 rounded-md text[#d0d2d6]' type="text" name="category_name" id="name" placeholder='Category Name' />
+                                      outline-none bg-[#ffffff] border border-slate-700 rounded-md
+                                       text-[#000000]' type="text" name="category_name" id="name" placeholder='Category Name'
+                                     />
+                               </div>
+                               <div>
+                                 <label htmlFor='image' className='flex justify-center items-center flex-col
+                                  h-[238px] cursor-pointer border border-dashed
+                                   hover:border-red-500 w-full border-[#d0d2d6]'>
+                                       <span>
+                                          <FaImage />
+                                       </span>
+                                       <span>Select Image</span>
+                                   </label>
+                                   <input className='hidden' type="file" name="image" id="image" />
+                                   <div>
+                                    <button className='bg-red-500 w-full
+                                      hover:shadow-red-500/40 hover:shadow-md
+                                       text-white rounded-md px-7 py-2 my-2'>Add Category</button>
+                                   </div>
                                </div>
                              </form>
                       </div>
