@@ -54,3 +54,83 @@ const Sidebar = ({showSidebar, setShowSidebar}) => {
 }
 
 export default Sidebar
+
+
+// import React, { useEffect, useState } from 'react'
+// import { NavLink, Link } from 'react-router-dom'
+// import { BiLogOutCircle } from "react-icons/bi";
+// import { getNav } from '../navigation/index'
+
+// const Sidebar = ({ showSidebar, setShowSidebar }) => {
+//   const [allNav, setAllNav] = useState([])
+
+//   useEffect(() => {
+//     const navs = getNav('admin')
+//     setAllNav(navs)
+//   }, [])
+
+//   return (
+//     <div>
+//       {/* overlay */}
+//       <div
+//         onClick={() => setShowSidebar(false)}
+//         className={`fixed duration-200 ${!showSidebar ? 'invisible' : 'visible'}
+//            w-screen h-screen bg-[#8cbce780] top-0 left-0 z-10`}
+//       />
+
+//       {/* sidebar */}
+//       <div
+//         className={`w-[260px] fixed bg-[#e6e7fb] z-50 top-0 
+//             h-screen shadow-[0_0_15px_0_rgb(34_41_47_/_5%)] transition-all 
+//             ${showSidebar ? 'left-0' : '-left-[260px] lg:left-0'}`}
+//       >
+//         {/* logo */}
+//         <div className="h-[70px] flex justify-center items-center">
+//           <Link to="/" className="w-[180px] h-[50px]">
+//             <img
+//               className="w-full h-full"
+//               src="http://localhost:3000/images/logo.png"
+//               alt="logo"
+//             />
+//           </Link>
+//         </div>
+
+//         {/* nav items */}
+//         <div className="px-[16px]">
+//           <ul>
+//             {allNav.map((n, i) => (
+//               <li key={i}>
+//                 <NavLink
+//                   to={n.path}
+//                   className={({ isActive }) =>
+//                     `px-[12px] py-[9px] rounded-sm flex justify-start items-center gap-[12px] w-full mb-1 transition-all
+//                      ${
+//                        isActive
+//                          ? 'bg-blue-600 shadow-indigo-500/50 text-white'
+//                          : 'text-[#030811] font-bold hover:pl-4'
+//                      }`
+//                   }
+//                 >
+//                   <span>{n.icon}</span>
+//                   <span>{n.title}</span>
+//                 </NavLink>
+//               </li>
+//             ))}
+
+//             {/* logout */}
+//             <li>
+//               <button className="text-[#030811] font-bold duration-200 px-[12px] py-[9px] rounded-sm flex justify-start items-center gap-[12px] hover:pl-4 transition-all w-full mb-1">
+//                 <span>
+//                   <BiLogOutCircle />
+//                 </span>
+//                 <span>Logout</span>
+//               </button>
+//             </li>
+//           </ul>
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default Sidebar

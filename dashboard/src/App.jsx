@@ -11,7 +11,7 @@ function App() {
    useEffect(() => {
       const routes = getRoutes()
       setAllRoutes([...allRoutes, routes])
-   }, [allRoutes])
+   }, [])
    
    return (
              <Suspense fallback={<div>Chargement...</div>}>
