@@ -12,7 +12,7 @@ const Orders = () => {
   
     return (
     <div className='px-2 lg:px-7 pt-5'>
-        <div className='w-full p-4 bg-[#6a5fdf]'>
+        <div className='w-full p-4 bg-[#6a5fdf] rounded-md'>
             <div className='flex justify-between items-center'>
                 <select onChange={(e) => setPerPage(parseInt(e.target.value))} className='px-4 py-2 focus:border-indigo-500
                  outline-none bg-[#6a5fdf] border border-slate-700
@@ -48,7 +48,7 @@ const Orders = () => {
                               <div className='py-3 w-[18%] font-medium'>Pending</div>
                               <div className='py-3 w-[18%] font-medium'>Pending</div>
                               <div className='py-3 w-[18%] font-medium'>
-                                <Link>View</Link>
+                                <Link to='/admin/dashboard/order/details/3'>View</Link>
                               </div>
                               <div onClick={(e) => setShow(!show)} className='py-3 w-[8%] font-medium'>
                                  <BsArrowDownSquare />
